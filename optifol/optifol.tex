@@ -8,7 +8,7 @@
 \title[B. Eng. Project Example]{A Formal Requirements Engineering Toolkit}
 \subtitle{B. Eng. Project Example}
 
-\titlegraphic{\url{github.com/oliverdixon/OptiFOL-Software}}
+\titlegraphic{\url{https://github.com/oliverdixon/OptiFOL-Software}}
 
 \author{Oliver Dixon}
 
@@ -17,6 +17,68 @@
 
 \begin{document}
 \frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Research Question}
+    \begin{itemize}
+        \item Executing large engineering projects is difficult and error-prone,
+            even for experienced professionals.
+        \item Attaining a clear set of \emph{project requirements} from the 
+            outset has been shown, over decades, to improve outcomes.
+        \item But how do we know that our requirements are \emph{useful}?
+            \begin{itemize}
+                \item More precisely, how do we specify them?
+                \item And how do we know that other people know what we mean?
+                \item And if we have 100,000 requirements, how do we know that
+                    no two requirements are contradictory?
+            \end{itemize}
+        \item These questions are hard to answer.
+        \item So can we develop some software to make the process easier?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Research Answer}
+    \begin{itemize}
+        \item We can use the language of \emph{First-Order Logic} to formally
+            represent requirements with no ambiguity.
+    \end{itemize}
+    \begin{align*}
+        \text{\itshape ``The } &\text{\itshape submarines should not be %
+            detectable by any sensors'':} \\
+        & \underbrace{\forall x ( \operatorname{Submarine}(x)}_%
+            \text{for all submarines\ldots} \implies
+          \underbrace{\lnot \exists y (\operatorname{Sensor}(y)}_%
+            \text{there is no sensor\ldots} \land
+          \underbrace{\operatorname{CanDetect}(y,x)))}_%
+            \text{that can detect our sub!}
+    \end{align*}
+    \begin{itemize}
+        \item Once we have our requirements in first-order logic, we can reason
+            about them using techniques from \emph{Automated Theorem-Proving}.
+            \begin{itemize}
+                \item Can they contradict one another?
+                \item Are any of them redundant?
+                \item Can they be made any simpler?
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Project Outcomes}
+    \begin{itemize}
+        \item Wrote approx. 35,000 lines of C++ to \emph{prove} that this can be
+            done.
+        \item Produced  a 61-page report (frontmatter; 30 pages of body; 15
+            pages of appendices; bibliography) describing the problem
+            specification, design, implementation, and evaluation.
+        \item Project marked at 81\% by a team of world-leading experts in
+            mathematical logic.
+        \item Software has attracted interest from industrial partners.
+    \end{itemize}
+    \vfill\centering%
+    \includegraphics{logo.pdf}
+\end{frame}
 
 \begin{frame}
     \frametitle{Screenshots (1/5)}
