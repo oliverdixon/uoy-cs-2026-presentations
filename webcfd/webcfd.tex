@@ -3,13 +3,13 @@
 \documentclass{beamer}
 
 \usetheme{CambridgeUS}
-\setbeamertemplate{caption}[numbered]
+\usecolortheme{dolphin}
 
 \title[HW-Accelerated Browser Graphics]%
     {Hardware-Accelerated Real-Time Visualisation of Physical Structures in %
     the Browser}
 
-\titlegraphic{\url{github.com/oliverdixon/webcfd/tree/cs-demo-day/}}
+\titlegraphic{\url{https://github.com/oliverdixon/webcfd/tree/cs-demo-day/}}
 
 \author{Oliver Dixon}
 
@@ -21,21 +21,65 @@
 
 \begin{frame}
     \frametitle{C++? In the browser?}
+    \begin{itemize}
+        \item \textbf{Sure! Why not?}
+        \item \emph{WebAssembly} is an open standard, implemented by all major
+            browsers, to run native code inside a web browser.
+        \item This means that web applications can be written in any mainstream
+            language:
+            \begin{itemize}
+                \item Rust; Go; C\#
+                \item C++; Java; assembly language
+                \item \ldots \emph{anything with an LLVM front-end} \ldots
+            \end{itemize}
+        \item Freed from the shackles of JavaScript!
+        \item And we can use all of our existing libraries and frameworks:
+            just compile them to WebAssembly.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{GPU graphics? In the browser?}
+    \frametitle{GPU-accelerated graphics? In the browser?}
+    \begin{itemize}
+        \item \textbf{Sure! Why not?}
+        \item \emph{WebGPU} is similarly an open standard, implemented by all
+            major browsers, to allow web pages to communicate (more or less)
+            directly with the GPU.
+        \item Shaders are written in the WebGPU Shader Language (looks like
+            Rust) to accelerate compute or rendering tasks with the user's GPU.
+        \item Exposes APIs to the browser, so applications (including
+            WebAssembly apps) can work with the GPU.
+    \end{itemize}
+    \vfill\centering%
+    \fbox{\parbox[t]{.8\textwidth}{Anyone can write fully functional native
+        applications with GPU-accelerated graphics that run \emph{by default} in
+        any modern browser!}}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Samples (1)}
+    \frametitle{Try it for yourself!}
+    \centering%
+    \parbox{.4\linewidth}{\includegraphics[width=\linewidth]{qrcode.pdf}}\quad%
+    \parbox{.2\linewidth}{%
+        \includegraphics[width=\linewidth]{wasm.pdf}\vspace{1ex}\par%
+        \includegraphics[width=\linewidth]{webgpu.pdf}%
+    }\par\vspace{2ex}%
+    \begin{itemize}
+        \item \url{https://www-users.york.ac.uk/~od641/web-extra/demo.html}
+        \item You might need to enable WebGPU in the browser settings:
+            \url{https://enablegpu.com}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Samples (1/2)}
     \centering
     \includegraphics[width=.49\textwidth]{aurora.jpg}\hfill%
     \includegraphics[width=.49\textwidth]{julia.jpg}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Samples (2)}
+    \frametitle{Samples (2/2)}
     \centering
     \includegraphics[width=.49\textwidth]{vortex.jpg}\hfill%
     \includegraphics[width=.49\textwidth]{neon.jpg}
