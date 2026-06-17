@@ -1,6 +1,7 @@
 % OWD 2026
 %
 \documentclass{beamer}
+\usepackage{qrcode}
 
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
@@ -59,7 +60,8 @@
 \begin{frame}
     \frametitle{Try it for yourself!}
     \centering%
-    \parbox{.4\linewidth}{\includegraphics[width=\linewidth]{qrcode.pdf}}\quad%
+    \parbox{.4\linewidth}{\qrcode[height=\linewidth]%
+        {https://www-users.york.ac.uk/~od641/web-extra/demo.html}}\quad%
     \parbox{.2\linewidth}{%
         \includegraphics[width=\linewidth]{wasm.pdf}\vspace{1ex}\par%
         \includegraphics[width=\linewidth]{webgpu.pdf}%
